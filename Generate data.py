@@ -59,7 +59,8 @@ def generate_pr_comp():
     return str(random.choice([910, 920, 930])) if random.random() > 0.5 else ""
 
 # Create and write CSV
-with open("final_generated_data.csv", "w", newline='', encoding='utf-8') as f:
+filename = f"{datetime.now().strftime('%Y%m%d_%H%M%S')}_generated_data.csv"
+with open(filename, "w", newline='', encoding='utf-8') as f:
     writer = csv.writer(f)
     writer.writerow(["Pr_ID", "Pr_Nmn", "Pr_desc", "Pr_st", "Pr_end", "Pr_AppComp", "Pr_AppEmp", "Pr_Comp"])
 
